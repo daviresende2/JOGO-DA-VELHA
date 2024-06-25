@@ -1,6 +1,7 @@
 Rian Salin - HTML inicial
+Davi Resende - HTML atualizado com novas funções de placares, novos botões e funcionalidades.
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -10,21 +11,35 @@ Rian Salin - HTML inicial
 </head>
 <body>
     
-  <main>
-    <h1>JOGO DA VELHA</h1>
-    
-    <div class="game">
-      <button data-i="1"></button>
-      <button data-i="2"></button>
-      <button data-i="3"></button>
-      <button data-i="4"></button>
-      <button data-i="5"></button>
-      <button data-i="6"></button>
-      <button data-i="7"></button>
-      <button data-i="8"></button>
-      <button data-i="9"></button>
-    </div>
-    <h2 class="currentPlayer"></h2>
+    <main>
+        <h1>JOGO DA VELHA</h1>
+        
+        <div class="game">
+            <button data-i="1"></button>
+            <button data-i="2"></button>
+            <button data-i="3"></button>
+            <button data-i="4"></button>
+            <button data-i="5"></button>
+            <button data-i="6"></button>
+            <button data-i="7"></button>
+            <button data-i="8"></button>
+            <button data-i="9"></button>
+        </div>
+        <h2 class="currentPlayer"></h2>
+
+        <div class="placar">
+            <h3>Placar:</h3>
+            <p><span id="jogador1Nome">Jogador 1</span>: <span id="jogador1Pontos">0</span> pontos</p>
+            <p><span id="jogador2Nome">Jogador 2</span>: <span id="jogador2Pontos">0</span> pontos</p>
+        </div>
+
+        <button id="novoJogoBtn">NOVO JOGO</button>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
   </main>
 
     <script src="./script.js"></script>
