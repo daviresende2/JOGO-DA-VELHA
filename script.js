@@ -1,10 +1,12 @@
 Rian Salin - JAVASCRIPT inicial
+Davi Resende - JAVASCRIPT Atualizado com Local Storage para placar, botões responsivos e funcionalidade para elencar os vencedores.
 
 document.addEventListener('DOMContentLoaded', () => {
     class Jogador {
         constructor(nome, simbolo) {
             this.nome = nome;
             this.simbolo = simbolo;
+            this.pontos = 0;
         }
     }
 
@@ -33,10 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         init() {
+            this.loadFromLocalStorage();
             this.buttons.forEach((button, index) => {
                 button.addEventListener('click', () => this.handleMove(index));
             });
             this.updateDisplay();
+
+            // Adiciona evento ao botão "NOVO JOGO"
+            document.getElementById('novoJogoBtn').addEventListener('click', () => this.novoJogo());
         }
 
         handleMove(index) {
@@ -46,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const winner = this.checkWinner();
                 if (winner) {
                     this.currentPlayerDisplay.textContent = `Vencedor: ${winner.nome}`;
+                    winner.pontos++;
+                    this.updatePlacar();
+                    this.saveToLocalStorage();
                 } else if (this.isBoardFull()) {
                     this.currentPlayerDisplay.textContent = 'Empate!';
                 } else {
@@ -64,25 +73,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         updateDisplay() {
-            this.currentPlayerDisplay.textContent = `Jogador Atual: ${this.currentJogador.nome} (${this.currentJogador.simbolo})`;
+            this.currentPlayerDisplay.textContent = `Jogador atual: ${this.currentJogador.nome} (${this.currentJogador.simbolo})`;
+        }
+
+        updatePlacar() {
+            document.getElementById('jogador1Nome').textContent = this.jogadores[0].nome;
+            document.getElementById('jogador1Pontos').textContent = this.jogadores[0].pontos;
+            document.getElementById('jogador2Nome').textContent = this.jogadores[1].nome;
+            document.getElementById('jogador2Pontos').textContent = this.jogadores[1].pontos;
         }
 
         checkWinner() {
-            let winner = null;
-            this.winningCombinations.forEach(combination => {
+            for (let combination of this.winningCombinations) {
                 const [a, b, c] = combination;
                 if (this.board[a] && this.board[a] === this.board[b] && this.board[a] === this.board[c]) {
-                    winner = this.currentJogador;
+                    return this.currentJogador;
                 }
-            });
-            return winner;
+            }
+            return null;
         }
 
         isBoardFull() {
             return this.board.every(cell => cell !== '');
         }
+
+        saveToLocalStorage() {
+            localStorage.setItem('jogadores', JSON.stringify(this.jogadores));
+        }
+
+        loadFromLocalStorage() {
+            const jogadoresData = localStorage.getItem('jogadores');
+            if (jogadoresData) {
+                this.jogadores = JSON.parse(jogadoresData).map(data => new Jogador(data.nome, data.simbolo));
+                this.updatePlacar();
+            }
+        }
+
+        novoJogo() {
+            this.board = ['', '', '', '', '', '', '', '', ''];
+            this.buttons.forEach(button => button.textContent = '');
+            this.currentPlayerIndex = 0;
+            this.updateDisplay();
+            this.currentPlayerDisplay.textContent = ''; // Limpa o texto de vencedor/empate
+        }
     }
 
-    
     new JogoDaVelha();
 });
+
