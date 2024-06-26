@@ -1,49 +1,49 @@
 Rian Salin - CSS inicial
-Caio Gomuslki - 
+Caio Gomuslki -  CSS modificado, melhorado e com interface agradável e intuitiva
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  background-color: darkcyan;
-  border: 3px solid black;
-  border-radius: 8px;
-}
-
-h1 {
-  text-align: center;
-}
-
-
-.game {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.game button {
-  width: 100px;
-  height: 100px;
-  margin: 5px;
-  cursor: pointer;
-  font-size: 50px;
-  background: #f7f7f7;
-}
-
-h2{
-  text-align: center;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: cadetblue;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: cadetblue;
+    border: 3px solid black;
+    border-radius: 5px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  
+  .game {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .game button {
+    width: 150px;
+    height: 150px;
+    margin: 3px;
+    cursor: pointer;
+    font-size: 50px;
+    background: white;
+  }
+  
+  h2{
+    text-align: center;
+  }
