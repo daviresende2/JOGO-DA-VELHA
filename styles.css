@@ -1,49 +1,117 @@
 Rian Salin - CSS inicial
 Caio Gomuslki -  CSS modificado, melhorado e com interface agradável e intuitiva
+Leonardo Sena - CSS melhorado e atualizado.
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: cadetblue;
-  }
-  
-  main {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background-color: cadetblue;
-    border: 3px solid black;
-    border-radius: 5px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  
-  .game {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  
-  .game button {
-    width: 150px;
-    height: 150px;
-    margin: 3px;
-    cursor: pointer;
-    font-size: 50px;
-    background: white;
-  }
-  
-  h2{
-    text-align: center;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+}
+
+#loginContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+#loginContainer h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+#loginContainer input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#loginContainer button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#loginContainer button:hover {
+  background-color: #0056b3;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}
+
+.game button {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  font-size: 40px;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.game button:hover {
+  background-color: #f0f0f0;
+}
+
+.currentPlayer,
+.placar,
+h2,
+h3,
+p {
+  color: #333;
+}
+
+#novoJogoBtn {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#novoJogoBtn:hover {
+  background-color: #218838;
+}
