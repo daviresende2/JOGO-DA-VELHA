@@ -1,6 +1,6 @@
-Rian Salin - JAVASCRIPT inicial
-Davi Resende - JAVASCRIPT Atualizado com Local Storage para placar, botões responsivos e funcionalidade para elencar os vencedores.
-Leonardo Sena - JAVASCRIPT atualizado com usuario e jogador.
+<! Rian Salin - JAVASCRIPT inicial --> 
+<! Davi Resende - JAVASCRIPT Atualizado com Local Storage para placar, botões responsivos e funcionalidade para elencar os vencedores. --> 
+<! Leonardo Sena - JAVASCRIPT atualizado com usuario e jogador. --> 
 
 document.addEventListener("DOMContentLoaded", () => {
   class Jogador {
